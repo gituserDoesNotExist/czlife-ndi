@@ -4,18 +4,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import de.cz.life.czlifendi.ndi.SignalFinder;
+import de.cz.life.czlifendi.ndi.FrameReceiver;
+import de.cz.life.czlifendi.ndi.SourceFinder;
 
 @RestController
 public class HelloController {
 
 	@Autowired
-	private SignalFinder signalFinder;
-	
+	private FrameReceiver frameReceiver;
 	
 	@RequestMapping("/")
 	public String index() {
-		signalFinder.findSignal();
+		frameReceiver.test();
 		
 		return "Greetings from Spring Boot!";
 	}

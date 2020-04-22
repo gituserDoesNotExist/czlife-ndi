@@ -15,7 +15,6 @@ public class CzlifeNdiApplication {
 		SpringApplication.run(CzlifeNdiApplication.class, args);
 	}
 
-	
 	@Bean
 	public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
 		return args -> {

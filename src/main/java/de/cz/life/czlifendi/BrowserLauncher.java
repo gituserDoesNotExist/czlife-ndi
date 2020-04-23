@@ -16,7 +16,7 @@ public class BrowserLauncher {
 	@Value("${url.welcome.page}")
 	private String startupUrl;
 
-	@EventListener({ ApplicationReadyEvent.class })
+//	@EventListener({ ApplicationReadyEvent.class })
 	void applicationReadyEvent() throws URISyntaxException, IOException {
 		System.setProperty("java.awt.headless", "false");
 		Desktop.getDesktop().browse(new URI(startupUrl));

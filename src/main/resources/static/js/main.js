@@ -6,13 +6,14 @@ function loadEvents () {
 
         var commentTable = document.getElementById("events");
 
-        this.source = new EventSource("/event/stream");
+        this.source = new EventSource("/video/stream");
 
         this.source.addEventListener("message", function (event) {
 
             // These events are JSON, so parsing and DOM fiddling are needed
             var event = JSON.parse(event.data);
-
+			
+			console.log("received " +  event)
             var row = commentTable.getElementsByTagName("tbody")[0].insertRow(0);
             var cell0 = row.insertCell(0);
             var cell1 = row.insertCell(1);
@@ -20,8 +21,8 @@ function loadEvents () {
             cell0.className = "author-style";
             cell0.innerHTML = event.id;
 
-            cell1.className = "date";
-            cell1.innerHTML = event.date;
+            cell1.className = "data";
+            cell1.innerHTML = event.videoFrame;
 
         });
 

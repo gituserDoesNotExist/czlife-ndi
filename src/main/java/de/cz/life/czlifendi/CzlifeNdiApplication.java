@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class CzlifeNdiApplication {
 
+	
 	public static void main(String[] args) {
 		SpringApplication.run(CzlifeNdiApplication.class, args);
 	}
@@ -26,7 +27,6 @@ public class CzlifeNdiApplication {
 			for (String beanName : beanNames) {
 				System.out.println(beanName);
 			}
-
 		};
 	}
 }
